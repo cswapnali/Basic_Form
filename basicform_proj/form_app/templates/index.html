@@ -1,0 +1,24 @@
+{% extends 'base.html' %} 
+{%block title%}Basic Form{%endblock title%}
+{% load crispy_forms_tags %} 
+
+{% block body %}
+<div class="container my-3">
+  <form method="POST" autocomplete="off">
+    {% csrf_token %}
+    <form class="row g-3">
+      {{form.name|as_crispy_field}}
+      {{form.email|as_crispy_field}}
+      {{form.phone|as_crispy_field}}
+      {{form.bday|as_crispy_field}}
+
+      <div class="row">
+        <div class="col-md-8">
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+      </div>
+    </form>
+  </form>
+</div>
+
+{% endblock %}

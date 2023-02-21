@@ -1,0 +1,28 @@
+{% extends 'base.html' %} 
+{%block title%}Form Details{%endblock title%}
+
+{% block body %}
+<div class="container my-3">
+  <table class="table table-boarderless">
+    <thead class="boarder-bottom font-weight-bold">
+      <tr>
+        <td>Name</td>
+        <td>Email</td>
+        <td>Contact</td>
+        <td>Birthdate</td>
+      </tr>
+    </thead>
+    <body>
+      {% for fm in form_details %}
+      <tr>
+        <td>{{fm.name}}</td>
+        <td>{{fm.email}}</td>
+        <td>{{fm.phone}}</td>
+        <td>{{fm.bday}}</td>
+      </tr>
+      {% endfor %}
+    </body>
+  </table>
+</div>
+
+{% endblock body %}
